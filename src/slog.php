@@ -12,7 +12,7 @@
  * A simple logging class wrapper around syslog,
  * loosely based off of the PSR3 standard
  */
-class slog {
+class SLog {
   const EMERGENCY = LOG_EMERG;
   const ALERT     = LOG_ALERT;
   const CRITICAL  = LOG_CRIT;
