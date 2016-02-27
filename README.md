@@ -3,7 +3,7 @@ A simple log wrapper around syslog
 
 <a href="https://codeclimate.com/github/makopov/simple-log"><img src="https://codeclimate.com/github/makopov/simple-log/badges/gpa.svg" /></a>
 
-Simple log is a singleton class that makes logging to syslog very easy.
+Simple Log is a singleton class that makes logging to syslog very easy.
 
 Get an object instance:
 
@@ -31,9 +31,9 @@ $oLogger->info('some message');
 $oLogger->debug('some message');
 ```
 
-Log messages will appear in syslog (/var/log/message). By default Simple Log will include the file name and line number of where the log was made from.
+Log messages will appear in syslog (/var/log/messages). By default Simple Log will include the file name and line number of where the log was made from.
 
-For example:
+Example:
 
 Foo.php
 ```php
@@ -45,5 +45,5 @@ function foo() {
 Will show up in syslog like so:
 > Feb 26 22:11:47 localhost MyApp: Foo.php:2 - something happened
 
-Thats it. Please submit bugs as you see them. I will add tests in the near future.
+Thats it! Please submit bugs as you see them. I will add tests in the near future.
 
