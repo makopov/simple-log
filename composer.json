@@ -1,0 +1,17 @@
+{
+    "name": "makopov/simple-log",
+    "description": "A simple log wrapper around syslog, loosely based on PSR-3",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Akopov",
+            "email": "makopov@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "simple-log\\": "src/"
+        }
+    }
+}
