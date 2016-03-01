@@ -101,7 +101,7 @@ class SLog {
 
     }
 
-    $strMessage += $this->parseContext($aContext);
+    $strMessage .= '. Context: ' . $this->parseContext($aContext);
 
     syslog($strLevel, basename($strCalledFrom) . ' - ' . $strMessage);
   }
