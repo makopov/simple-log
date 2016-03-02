@@ -33,6 +33,13 @@ class SimpleLog {
    * Opening a log connection with our logging details
    */
   private function __construct() {
+    $this->openLogFile();
+  }
+
+  /** 
+   * Opens log file
+   */
+  private function openLogFile() {
     openlog($this->strApplicationName, LOG_ODELAY, LOG_USER);
   }
 
@@ -57,6 +64,7 @@ class SimpleLog {
 
   public function setApplicationName($strApplicationName) {
     $this->strApplicationName = $strApplicationName;
+    $this->openLogFile();
   }
 
   public function emergency($strMessage, $aContext = array()) {
@@ -98,8 +106,16 @@ class SimpleLog {
     if(isset($oDebugTrace[1])) {
       $oCaller = $oDebugTrace[1];
 
-      if (isset($oCaller['file']) && isset($oCaller['line'])) {
-        $strCalledFrom = $oCaller['file'] . ':' . $oCaller['line'];
+      if (isset($oCaller['file'])) {
+        $strCalledFrom = $oCaller['file'];
+      }
+
+      if (isset($oCaller['line'])) {
+        $strCalledFrom .= ':' . $oCaller['line'];
+      }
+
+      if (isset($oCaller['function'])) {
+        $strCalledFrom .= ' in function \'' . $oCaller['function'] . '()\'';
       }
 
     }
