@@ -11,7 +11,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "makopov\simple-log\\": "src/"
+            "makopov\simplelog\\": "src/"
         }
     }
 }

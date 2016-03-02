@@ -4,7 +4,7 @@
  * makopov@gmail.com
  * http://michaelakopov.com
  *
- * slog - Simple Log
+ * SimpleLog - Simple Log
  * A simple log wrapper around 
  */
 
@@ -13,9 +13,9 @@
  * loosely based off of the PSR3 standard
  */
 
-namespace makopov\simple-log
+namespace makopov\simplelog
 
-class SLog {
+class SimpleLog {
   const EMERGENCY = LOG_EMERG;
   const ALERT     = LOG_ALERT;
   const CRITICAL  = LOG_CRIT;
@@ -28,7 +28,7 @@ class SLog {
   private $strApplicationName = 'php';
 
   /**
-   * slog constructor.
+   * SimpleLog constructor.
    *
    * Opening a log connection with our logging details
    */
@@ -44,12 +44,12 @@ class SLog {
   }
 
   /**
-   * Singelton implementation, returns the same instance of slog
-   * @return slog
+   * Singelton implementation, returns the same instance of SimpleLog
+   * @return SimpleLog
    */
   public static function getInstance() {
     if(static::$oInstance == null) {
-      static::$oInstance = new slog();
+      static::$oInstance = new SimpleLog();
     }
 
     return static::$oInstance;
