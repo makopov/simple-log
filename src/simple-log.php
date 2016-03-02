@@ -12,6 +12,9 @@
  * A simple logging class wrapper around syslog,
  * loosely based off of the PSR3 standard
  */
+
+namespace makopov\simple-log
+
 class SLog {
   const EMERGENCY = LOG_EMERG;
   const ALERT     = LOG_ALERT;
