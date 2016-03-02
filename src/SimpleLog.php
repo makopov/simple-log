@@ -13,7 +13,7 @@
  * loosely based off of the PSR3 standard
  */
 
-namespace simplelog
+namespace simplelog;
 
 class SimpleLog {
   const EMERGENCY = LOG_EMERG;
@@ -92,7 +92,7 @@ class SimpleLog {
   }
 
   public function log($strLevel, $strMessage, $aContext = array()) {
-    $oDebugTrace = debug_backtrace('DEBUG_BACKTRACE_IGNORE_ARGS');
+    $oDebugTrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
     $strCalledFrom = '';
 
     if(isset($oDebugTrace[1])) {
