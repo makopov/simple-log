@@ -13,7 +13,7 @@
  * loosely based off of the PSR3 standard
  */
 
-namespace makopov\simplelog
+namespace simplelog
 
 class SimpleLog {
   const EMERGENCY = LOG_EMERG;
