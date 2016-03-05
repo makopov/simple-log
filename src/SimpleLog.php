@@ -100,7 +100,12 @@ class SimpleLog {
   }
 
   public function log($strLevel, $strMessage, $aContext = array()) {
-    $oDebugTrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
+    if(phpversion() >= '5.4.0') {
+      $oDebugTrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
+    } else {
+      $oDebugTrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
+    }
+
     $strCalledFrom = '';
 
     if(isset($oDebugTrace[1])) {
@@ -112,10 +117,6 @@ class SimpleLog {
 
       if (isset($oCaller['line'])) {
         $strCalledFrom .= ':' . $oCaller['line'];
-      }
-
-      if (isset($oCaller['function'])) {
-        $strCalledFrom .= ' in function \'' . $oCaller['function'] . '()\'';
       }
 
     }
